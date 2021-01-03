@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import './payment.css'
  
  export const Payment = ({submit,setFormValues,prevValues}) => {
    return (
@@ -21,15 +22,15 @@ import * as Yup from 'yup';
         setFormValues({...values,...prevValues})
        }}
      >
-       <Form>
-         <label htmlFor="cardName">Card Name</label>
-         <Field name="cardName" type="text" />
+       <Form className="form">
+         {/* <label htmlFor="cardName">Card Name</label>   */}
+         <Field name="cardName" type="text" placeholder="Enter Card Name"  className="field"/>   
          <ErrorMessage name="cardName" />
-         <label htmlFor="cardNumber">Card Number</label>
-         <Field name="cardNumber" type="text" />
-         <ErrorMessage name="cardNumber" />
+         {/* <label htmlFor="cardNumber">Card Number</label> */}
+         <Field name="cardNumber" type="text" placeholder="Enter Card Number" className="field" />
+         <ErrorMessage name="cardNumber" /> <br/>
          <button onClick={()=>submit(0)}>Back</button>
-         <button type="submit">Submit</button>
+         <button type="submit">Next</button>
        </Form>
      </Formik>
    );

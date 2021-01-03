@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import './style.css'
  
  export const Address = ({submit,setFormValues,prevValues}) => {
    return (
@@ -24,19 +25,22 @@ import * as Yup from 'yup';
          setFormValues({...values})
        }}
      >
-       <Form>
-         <label htmlFor="area">Area Name</label>
-         <Field name="area" type="text" />
-         <ErrorMessage name="area" />
+       <Form className="form">
+         {/* <label htmlFor="area" className="label">Area Name</label> */}
+         <Field name="area" type="text" placeholder="Area Name" className="field" />
+         <ErrorMessage name="area" className="error" />
          <br/>
-         <label htmlFor="city">City Name</label>
-         <Field name="city" type="text" />
+         {/* <label htmlFor="city">City Name</label> */}
+         <Field name="city" type="text" placeholder="City Name" className="field"/>
          <ErrorMessage name="city" />
          <br/>
-         <label htmlFor="email">Email Address</label>
-         <Field name="email" type="email" />
-         <ErrorMessage name="email" />
-         <button type="submit">Submit</button>
+         {/* <label htmlFor="email">Email Address</label> */}
+         <Field name="email" type="email" placeholder="Email" className="field" />
+         <ErrorMessage name="email" /> <br/>
+         <button    
+                        variant="contained"
+                        color="primary"
+                        type="submit">Next</button>
        </Form>
      </Formik>
    );

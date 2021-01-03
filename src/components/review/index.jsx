@@ -1,10 +1,12 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import './review.css'
+ 
  
  export const Review = ({submit,values}) => {
    return (
-    <div>
+    <div className="main">
         <p>Area: {values.area}</p>
         <p>City: {values.city}</p>
         <p>Card Name: {values.cardName}</p>
@@ -12,6 +14,12 @@ import * as Yup from 'yup';
         <p>Email: {values.email}</p>
         <p>$total: 20$</p>
         <button onClick={()=>submit(1)} >Back</button>
+      
     </div>
+
    );
+
+   
  };
+
+  
